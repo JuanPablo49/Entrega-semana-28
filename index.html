@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hechos</title>
+</head>
+<script type="text/javascript">
+
+    function solonumeros(e)
+    {
+        key=e.keyCode || e.which;
+
+        teclado=String.fromCharCode(key);
+        numeros="0123456";
+        especiales="8-37-38-46";
+        teclado_especial=false;
+
+        for(var i in especiales){
+            if(key==especiales[i])
+            {
+                teclado_especial=true;
+            }
+        }
+        if(numeros.indexOf(teclado)==-1 && !teclado_especial)
+        {
+            return false;
+
+        }
+
+    }
+
+	function enviar() 
+	{
+        
+
+		var u=document.getElementById('w').value;
+
+          if(u<0 || u>6 || u%2==1 )
+        {
+        	alert('Este numero no es permitido');
+        } 
+        else
+        {
+            if(u==2)
+        {
+            var i=document.getElementById('t').style.display="block";
+        	o=document.getElementById('u').style.display="none";
+        	p=document.getElementById('y').style.display="none";
+            
+        }
+        if(u==4)
+        {
+            var p=document.getElementById('y').style.display="block";
+            i=document.getElementById('t').style.display="none";
+        	o=document.getElementById('u').style.display="none";
+            
+        }
+        if(u==6)
+        {
+            var o=document.getElementById('u').style.display="block";
+        	p=document.getElementById('y').style.display="none";
+        	i=document.getElementById('t').style.display="none";
+            
+
+        }
+    }	
+}
+</script>
+<body>
+    <article>
+        <form>
+
+    
+	
+	<center><div style="background-color: blue; width: 200px; height: 175px;border-radius: 10px;" >
+		<h1>Seleccione de a 2 (2, 4, 6)</h1>
+        <input type="text" onkeypress="return solonumeros(event)" onpaste="return false"
+         id="w"  style="margin-top: 20px;"><br><br>
+        <input type="button" id="r" value="Mostrar" onclick="enviar()">
+        
+  </div>
+  
+    <div id="t" style="display: none; ">
+    	<img src="abolicion.png" class="1" width="600px;" height="400px;">
+    	<img src="panama.png" class="2" width="600px;" height="400px;">
+        
+    </div>
+    <div id="y" style="display: none;">
+    	<img src="abolicion.png" class="1" width="600px;" height="400px;">
+    	<img src="panama.png" class="2" width="600px;" height="400px;">
+    	<img src="hegemonia.png" class="3" width="600px;" height="400px;">
+    	<img src="constitucion.png" class="4" width="600px;" height="400px;">
+        
+    </div>
+    <div id="u" style="display: none;">
+    	<img src="abolicion.png" class="1" width="600px;" height="400px;">
+    	<img src="panama.png" class="2" width="600px;" height="400px;">
+    	<img src="hegemonia.png" class="3" width="600px;" height="400px;">
+    	<img src="constitucion.png" class="4" width="600px;" height="400px;">
+    	<img src="bogotazo.png" class="5" width="600px;" height="400px;">
+    	<img src="golpe.png" class="6" width="600px;" height="400px;">
+        
+    </div>
+    
+  </center>
+</body>
+</html>
